@@ -1,6 +1,7 @@
 # docker-compose-python-webapp-robot-framework
 
-## Clone this repository and run below command 
+### Clone this repository and run below command 
 ```
-docker-compose up -d
+docker-compose up --build -d
 ```
+
