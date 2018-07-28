@@ -1,0 +1,20 @@
+version: "2"
+
+services:
+  product-service:
+    build: ./demoapp
+    volumes:
+      - ./demoapp:/usr/src/app
+    ports:
+      - 7272:7272
+
+  robot-default:
+    build: ./docker-robot-framework
+    volumes:
+      - ./docker-robot-framework/tests:/robots
+      - ./output:/output
+    tty: true
+    environment:
+      - ROBOT_TESTS=/robots/
+      - BROWSER=firefox
+
